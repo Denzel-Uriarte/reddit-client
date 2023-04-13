@@ -1,0 +1,19 @@
+tech stack
+- react
+- react router
+- redux
+- bootstrap (responsive)
+- git/github
+- jest/enzyme
+
+services
+- project management: github issues
+- hosting: github
+- deployment: netlify
+
+sitemap
+- / - Posts - Index (without filter)
+- /:category - Posts - Index (with :category filter)
+- /search/:term - Posts - Index (with :term filter)
+- /:subreddit - Posts - index (with :subreddit filter)
+- /posts/:id - Post show - Post with comments
