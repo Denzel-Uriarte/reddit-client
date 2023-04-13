@@ -5,19 +5,24 @@ import { SmallVoteBar } from '../smallVoteBar/SmallVoteBar';
 
 export const Comment = ({ name, score, body, created_utc}) => {
   const converted_utc = created_utc //for testing now
+  function handleClick() {
+    alert('view smaller comments')
+  }
   return (
     <div
-      className={['col-12', 'flex-row'].join(' ')}
-      
+      className={['col-12', 'flex-row', 'd-flex'].join(' ')}
     >
       <SmallVoteBar 
         score={score}
       />
       <div
-        className={['col-11', ''].join(' ')}
+        className={['col-10', 'h-100', 'mx-3', 'bg-dark', 'text-light', 'px-3', 'pb-1'].join(' ')}
       >
-        <p>{`${name} - ${converted_utc}`}</p>
+        <p className={["my-0", 'text-secondary'].join(' ')}>{`${name} - ${converted_utc}`}</p>
         <p>{body}</p>
+        <button onClick={handleClick}>
+          view replies
+        </button>
       </div>
     </div>
     
@@ -30,21 +35,21 @@ export const Comment = ({ name, score, body, created_utc}) => {
  */
 Comment.propTypes = {
   /**
-   * Is this the principal call to action on the page?
+   * Name of creator
    */
   name: PropTypes.string,
   /**
-   * How large should the button be?
+   * Content of comment
    */
-  size: PropTypes.oneOf(['tall', 'wide']),
+  body: PropTypes.string.isRequired,
   /**
-   * Button contents
-   */
-  content: PropTypes.string.isRequired,
-  /**
-   * Optional additional classes
+   * User score
    */
   score: PropTypes.number,
+  /**
+   * Time created
+   */
+  created_utc: PropTypes,
 };
 
 Comment.defaultProps = {

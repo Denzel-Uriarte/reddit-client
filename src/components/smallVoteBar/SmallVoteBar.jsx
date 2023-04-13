@@ -12,12 +12,12 @@ export const SmallVoteBar = ({ score, ...props}) => {
   }
   return (
     <div 
-      className={['bg-dark', 'col-1', 'text-white', 'flex-column', 'd-flex', 'justify-content-center', 'text-center'].join(' ')}
+      className={['col-1', 'text-white', 'flex-column', 'd-flex', 'text-center'].join(' ')}
 
       {...props}
     >
       <div
-      className={['score'].join(' ')}
+      className={['score', 'bg-dark'].join(' ')}
       >
         {!voted ? 
         <>
