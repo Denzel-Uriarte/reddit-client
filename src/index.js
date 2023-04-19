@@ -6,6 +6,8 @@ import App from '../src/app/App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
+
+const StoreContext = React.createContext()
 const container = document.getElementById('root');
 const root = createRoot(container);
 

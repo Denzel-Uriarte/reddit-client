@@ -10,18 +10,12 @@ export default {
   },
 };
 
-export const category = {
+export const Normalpost = {
   args: {
-    dark: true,
-    label: 'Category',
-    size: 'tall'
   },
 };
 
-export const recommendation = {
+export const Fullpost = {
   args: {
-    dark: false,
-    label: 'Recommendation',
-    size: 'wide'
   },
 };

@@ -8,20 +8,22 @@ import {
  } from 'react-router-dom';
 import './App.css';
 import ROUTES from './routes';
+import { Comment } from '../components/comment/Comment';
+import { NavBar } from '../components/navBar/NavBar'
 
 export default function App() {
   return (
         <Router>
       <nav>
-        <NavLink to={ROUTES.homeRoute()} activeClassName="active">
+        {/* <NavLink to={ROUTES.homeRoute()} activeClassName="active">
           WenzelVerse Forums
-        </NavLink>
-        {/* <SearchBar /> */}
+        </NavLink> */}
+        {/* <NavBar /> */}
       </nav>
-
+        <Comment />
       <Routes>
         <Route path="/home">
-            {/* <HomePage /> */}
+          
         </Route>
         <Route path='/best'>
           

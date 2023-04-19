@@ -7,6 +7,7 @@ const config = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
   ],
+  staticDirs: [],
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
@@ -14,6 +15,6 @@ const config = {
   docs: {
     autodocs: "tag",
   },
-  staticDirs: ["..\\public"],
+  staticDirs: ["../public", '../src/assets'],
 };
 export default config;

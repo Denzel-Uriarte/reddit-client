@@ -12,7 +12,7 @@ export const VoteBar = ({ score, numComments, ...props}) => {
   }
   return (
     <div 
-      className={['bg-dark', 'col-2', 'text-white', 'flex-column', 'd-flex', 'justify-content-center', 'text-center'].join(' ')}
+      className={['bg-dark', 'col-1', 'text-white', 'flex-column', 'd-flex', 'justify-content-center', 'text-center', 'mx-3'].join(' ')}
 
       {...props}
     >
@@ -40,7 +40,7 @@ export const VoteBar = ({ score, numComments, ...props}) => {
         } 
       </div>
       <div
-      className={['comment'].join(' ')}
+      className={['comment', 'mt-5'].join(' ')}
       >
         <img src='comment.png' alt='comments'/>
         <p>{numComments}</p>
