@@ -7,7 +7,6 @@ const config = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
   ],
-  staticDirs: [],
   framework: {
     name: "@storybook/react-webpack5",
     options: {},

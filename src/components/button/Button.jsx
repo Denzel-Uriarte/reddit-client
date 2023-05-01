@@ -36,7 +36,7 @@ Button.propTypes = {
   /**
    * Optional click handler
    */
-  onClick: PropTypes.func,
+  onClick: PropTypes.any,
   /**
    * Optional additional classes
    */

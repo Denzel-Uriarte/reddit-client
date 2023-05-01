@@ -1,21 +1,100 @@
 {
-  "data":{
-    "children":[
+  "data": {
+    "children": [
       {
-        "author":"MarvelsGrantMan136",
+        "author":"Diego34252",
+        "title":"Diegoverse showcase",
+        "subreddit_name_prefixed":"r/gatopan",
+        "selftext":"wenzel wenzfesewfaerwgfr rwg rwg",
+        "score":17642,
+        "created_utc":1680868406.0,
+        "num_comments":6497,
+        "is_video":false,
+        "commentsinfo": [
+          {
+            "name":"wenzel",
+            "body":"i come from the fturue",
+            "score":115,
+            "created_at_utc":1621552410,
+            "repliesv2": [{
+              "id": 1,
+              "name": "denzel",
+              "created_utc": 162155362410,
+              "body": "hello everyone"
+            },
+            {
+              "id": 2,
+              "name": "diego",
+              "created_utc": 162136552410,
+              "body": "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow"
+            }
+            ]
+          }
+        ]
+      },
+      {
+        "author":"Wezar13",
+        "title":"figma fase 3",
+        "subreddit_name_prefixed":"r/figma",
+        "score":12357,
+        "thumbnail":"https://b.thumbs.redditmedia.com/d2mU-lt0aeNODeU9W0JgZVqLzNzIPAtC9j_j00a112M.jpg",
+        "created_utc":1680868406.0,
+        "selftext":"improvements",
+        "num_comments":6497,
+        "is_video":false,
+        "thumbnail_height":140,
+        "commentsinfo": [
+          {
+            "name":"wenzel",
+            "body":"i come from the fturue",
+            "score":115,
+            "created_at_utc":162155362410,
+            "repliesv2": [{
+              "id": 1,
+              "name": "denzel",
+              "created_utc": 162155362410,
+              "body": "hello everyone"
+            },
+            {
+              "id": 2,
+              "name": "diego",
+              "created_utc": 162155241036,
+              "body": "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow"
+            }
+            ]
+          }
+        ]
+      },
+      {
+        "author":"WenzelverseCEO",
         "title":"Daisy Ridley to Return as Rey in New \u2018Star Wars\u2019 Movie",
         "subreddit_name_prefixed":"r/movies",
         "score":17642,
         "thumbnail":"https://b.thumbs.redditmedia.com/d2mU-lt0aeNODeU9W0JgZVqLzNzIPAtC9j_j00a112M.jpg",
-        "created":1680868406.0,
+        "created_utc":1680868406.0,
         "num_comments":6497,
-        "is_video":false
-      },
-      {
-
-      },
-      {
-
+        "is_video":false,
+        "commentsinfo": [
+          {
+            "name":"wenzel",
+            "body":"i come from the fturue",
+            "score":115,
+            "created_at_utc":1621552410,
+            "repliesv2": [{
+              "id": 1,
+              "name": "denzel",
+              "created_utc": 1621552410,
+              "body": "hello everyone"
+            },
+            {
+              "id": 2,
+              "name": "diego",
+              "created_utc": 1621552410,
+              "body": "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow"
+            }
+            ]
+          }
+        ]
       }
     ]
   }

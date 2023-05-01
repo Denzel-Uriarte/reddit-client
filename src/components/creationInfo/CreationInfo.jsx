@@ -30,7 +30,7 @@ CreationInfo.propTypes = {
   /**
    * How long ago was this posted?
    */
-  time: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
 };
 
 CreationInfo.defaultProps = {

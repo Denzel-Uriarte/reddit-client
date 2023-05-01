@@ -1,48 +1,43 @@
 import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from 'react';
+import { setTerm } from '../../pages/postspage/postsPageSlice';
 
 export const VoteBar = ({ score, numComments, ...props}) => {
   const [voted, setVoted] = useState('');
-  function upvote () {
-    setVoted('up')
-  }
-  function downvote() {
-    setVoted('down')
-  }
   return (
     <div 
-      className={['bg-dark', 'col-1', 'text-white', 'flex-column', 'd-flex', 'justify-content-center', 'text-center', 'mx-3'].join(' ')}
+      className={['bg-dark', 'h-25', 'col-1', 'text-white', 'flex-column', 'd-flex', 'justify-content-top', 'text-center', 'mx-0', 'me-3', ].join(' ')}
 
       {...props}
     >
       <div
-      className={['score'].join(' ')}
+      className={['score', 'pt-3'].join(' ')}
       >
         {!voted ? 
         <>
-          <img src='upvote-off.png' alt='upvote' onClick={upvote}/>
+          <img src={require('./upvote-off.png')} alt='upvote' onClick={()=>setTerm('hot.json')}/>
           <p style={{margin:8+'px'}}>{score}</p>
-          <img src='downvote-off.png' alt='downvote' onClick={downvote}/>
+          <img src={require('./downvote-off.png')} alt='downvote' onClick={()=>setVoted('down')}/>
         </>
         : voted==='up' ? 
         <>
-          <img src='upvote-on.png' alt='upvoted'/>
+          <img src={require('./upvote-on.png')} alt='upvoted'/>
           <p style={{margin:8+'px'}}>{score}</p>
-          <img src='downvote-off.png' alt='downvote' onClick={downvote}/>
+          <img src={require('./downvote-off.png')} alt='downvote' onClick={()=>setVoted('down')}/>
         </> 
         : 
         <>
-          <img src='upvote-off.png' alt='upvote' onClick={upvote}/>
+          <img src={require('./upvote-off.png')} alt='upvote' onClick={()=>setVoted('up')}/>
           <p style={{margin:8+'px'}}>{score}</p>
-          <img src='downvote-on.png' alt='downvoted'/>
+          <img src={require('./downvote-on.png')} alt='downvoted'/>
         </> 
         } 
       </div>
       <div
       className={['comment', 'mt-5'].join(' ')}
       >
-        <img src='comment.png' alt='comments'/>
+        <img src={require('./comment.png')} alt='comments' onClick={()=>{}}/>
         <p>{numComments}</p>
       </div>
     </div>
@@ -66,11 +61,11 @@ VoteBar.propTypes = {
   /**
    * Wether the user has voted
    */
-  voted: PropTypes.oneOf(['up', 'down', false])
+  voted: PropTypes.oneOf(['up', 'down', ''])
 };
 
 VoteBar.defaultProps = {
   score: 248,
   numComments: 26,
-  voted: false,
+  voted: '',
 };

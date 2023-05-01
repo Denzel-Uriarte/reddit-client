@@ -2,36 +2,56 @@ import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { CreationInfo } from '../creationInfo/CreationInfo';
 import { VoteBar } from '../voteBar/VoteBar';
+import { Comment } from '../comment/Comment';
+// import { selectComments, setComments } from './postSlice';
+// import { useSelector, useDispatch } from 'react-redux';
 
 
-export const Post = ({ author, title, large, subreddit, score, created_at_utc, numComments, isVideo, content, ...props }) => {
-  const size = large ? 'FULLPOST' : 'BROWSEPOST';
-  const video = isVideo ? 'EMBED VIDEO' : null;
+export const Post = ({ author, title, large, subreddit, score, created_at_utc, numComments, isVideo, selftext, commentsinfo, fullpost, ...props }) => {
+  // const dispatch = useDispatch();
+  // const commentsdata = useSelector(selectComments);
   return (
-    <div
-      className={['row', 'text-light'].join(' ')}
-    >
-        <VoteBar 
-          score={score}
-          numComments={numComments}
-        />
+    <div>
       <div
-        className={['col-9', 'bg-dark', 'text-light', 'flex-row'].join(' ')}
+        className={['row', 'text-light', 'mx-0'].join(' ')}
       >
-        <div
-          className={['col-12', 'bg-dark', 'text-light', 'flex-row'].join(' ')}
-        >
-          <CreationInfo 
-            subreddit={subreddit}
-            user={author}
-            time={created_at_utc}
+          <VoteBar 
+            score={score}
+            numComments={numComments}
           />
-          <h2>{title}</h2>
+        <div
+          className={['col-10', 'bg-dark', 'text-light', 'flex-row'].join(' ')}
+        >
+          <div
+            className={['col-12', 'bg-dark', 'text-light', 'flex-row'].join(' ')}
+          >
+            <CreationInfo 
+              subreddit={subreddit}
+              user={author}
+              time={created_at_utc}
+            />
+            <h2>{title}</h2>
+          </div>
+          <p>{`${selftext}`}</p>
         </div>
-        <p>{`${content}`}</p>
+        
       </div>
-      
+      <div 
+        className={['mt-3'].join(' ')}
+      >
+        {fullpost && commentsinfo.map((comment, index)=> 
+          <Comment 
+            key={index}
+            name={comment.name}
+            body={comment.body}
+            score={comment.score}
+            created_utc={comment.created_at_utc}
+            repliesv2={comment.repliesv2}
+          />
+        )}
+      </div>
     </div>
+    
   );
 };
 
@@ -75,7 +95,11 @@ Post.propTypes = {
   /**
    * Post content
    */
-  content: PropTypes.string.isRequired
+  content: PropTypes.string.isRequired,
+  /**
+   * Comment data
+   */
+  commentsinfo: PropTypes.array
 };
 
 Post.defaultProps = {
@@ -91,4 +115,26 @@ Post.defaultProps = {
   hello everyone my name is markiplier
   diego rivera
   test test 123`,
+  commentsinfo: [
+    {
+      name:'wenzel',
+      body:'i come from the fturue',
+      score:115,
+      created_at_utc:1621552410,
+      repliesv2: [{
+        id: 1,
+        name: 'denzel',
+        created_utc: 5674564665464,
+        body: 'hello everyone'
+      },
+      {
+        id: 2,
+        name: 'diego',
+        created_utc: 3567457756545,
+        body: 'meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow'
+      }
+    ]
+    }
+  ],
+  fullpost: true
 };

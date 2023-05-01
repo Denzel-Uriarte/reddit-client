@@ -9,22 +9,21 @@ import {
 import './App.css';
 import ROUTES from './routes';
 import { Comment } from '../components/comment/Comment';
-import { NavBar } from '../components/navBar/NavBar'
+import { NavBar } from '../components/navBar/NavBar';
+import { Post } from '../components/post/Post';
+import { PostsPage } from '../pages/postspage/Postspage';
 
 export default function App() {
   return (
         <Router>
       <nav>
-        {/* <NavLink to={ROUTES.homeRoute()} activeClassName="active">
+        <NavLink to={ROUTES.homeRoute()} activeClassName="active">
           WenzelVerse Forums
-        </NavLink> */}
+        </NavLink> 
         {/* <NavBar /> */}
       </nav>
-        <Comment />
       <Routes>
-        <Route path="/home">
-          
-        </Route>
+        <Route path="/home" element={<PostsPage/>}/>
         <Route path='/best'>
           
         </Route>

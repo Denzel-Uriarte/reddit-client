@@ -1,5 +1,7 @@
 const ROUTES = {
-  homeRoute: () => "/home"
+  homeRoute: () => "/home",
+  postRoute: () => "",
+  postCommentsRoute: () => "/posr"
 };
 
 export default ROUTES;

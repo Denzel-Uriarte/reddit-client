@@ -3,13 +3,14 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 export const SmallComment = ({ name, body, created_utc}) => {
-  const converted_utc = created_utc //for testing now
+  const date = new Date(created_utc*1000)
+  const converted_utc = "at "+ date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
   return (
     <div
       className={['col-12', 'flex-row', 'd-flex'].join(' ')}
     >
       <div
-        className={['col-10', 'h-100', 'mx-0', 'bg-dark', 'text-light', 'px-3', 'pb-1'].join(' ')}
+        className={['col-10', 'h-100', 'mx-0', 'bg-dark', 'text-light', 'px-3', 'pb-1', 'mb-2'].join(' ')}
       >
         <p className={["my-0", 'text-secondary'].join(' ')}>{`${name} - ${converted_utc}`}</p>
         <p>{body}</p>
@@ -35,11 +36,11 @@ SmallComment.propTypes = {
   /**
    * Time created
    */
-  created_utc: PropTypes.string,
+  created_utc: PropTypes.number,
 };
 
 SmallComment.defaultProps = {
   name: 'wenzel',
   body: 'wenzelverse',
-  created_utc: '1 hour ago'
+  created_utc: 235664444
 };
