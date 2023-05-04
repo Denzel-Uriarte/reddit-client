@@ -3,18 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const commentSlice = createSlice({
   name: "comment",
   initialState: {
-    replies: [{
-      id: 1,
-      name: 'denzel',
-      created_utc: 'infinity ago',
-      body: 'hello everyone'
-    },
-    {
-      id: 2,
-      name: 'diego',
-      created_utc: 'infinity ago',
-      body: 'meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow'
-    }]
+    replies: []
   },
   reducers: {
     setReplies: (state, action) => {

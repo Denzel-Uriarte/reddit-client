@@ -7,12 +7,13 @@ import { SmallComment } from '../smallComment/SmallComment';
 // import { selectReplies, setReplies } from './commentSlice';
 
 
-export const Comment = ({ name, score, body, created_utc, repliesv2}) => {
+export const Comment = ({ name, score, body, created_utc, replies}) => {
   const [viewReplies, setViewReplies] = useState('');
   // const replies = useSelector(selectReplies);
   // const dispatch = useDispatch();
   const date = new Date(created_utc*1000)
   const dateFormat = "at "+ date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
+  const selftext = new DOMParser().parseFromString(`<!doctype html><body>${body}`, 'text/html').body.textContent;
   
   // function handleClick() {
   //   alert('view smaller comments')
@@ -32,7 +33,7 @@ export const Comment = ({ name, score, body, created_utc, repliesv2}) => {
           className={['col-10', 'h-100', 'mx-3', 'bg-dark', 'text-light', 'px-3', 'pb-1'].join(' ')}
         >
           <p className={["my-0", 'text-secondary'].join(' ')}>{`${name} - ${dateFormat}`}</p>
-          <p>{body}</p>
+          <div dangerouslySetInnerHTML={{__html: selftext}}/>
           <button onClick={()=>setViewReplies(!viewReplies)}>
             View Replies
           </button>
@@ -41,12 +42,12 @@ export const Comment = ({ name, score, body, created_utc, repliesv2}) => {
       <div
         className={['col-12', 'flex-column', 'd-flex'].join(' ')}
       >
-        {viewReplies && repliesv2.map((reply, index) => 
+        {viewReplies && replies && replies.data.children.map((reply, index) => 
           <SmallComment 
             key={index}
-            name={reply.name}
-            body={reply.body}
-            created_utc={reply.created_utc}
+            name={reply.data.author}
+            body={reply.data.body_html}
+            created_utc={reply.data.created_utc}
           />
         )}
       </div>

@@ -3,6 +3,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 export const SmallComment = ({ name, body, created_utc}) => {
+  const selftext = new DOMParser().parseFromString(`<!doctype html><body>${body}`, 'text/html').body.textContent;
   const date = new Date(created_utc*1000)
   const converted_utc = "at "+ date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
   return (
@@ -12,8 +13,8 @@ export const SmallComment = ({ name, body, created_utc}) => {
       <div
         className={['col-10', 'h-100', 'mx-0', 'bg-dark', 'text-light', 'px-3', 'pb-1', 'mb-2'].join(' ')}
       >
-        <p className={["my-0", 'text-secondary'].join(' ')}>{`${name} - ${converted_utc}`}</p>
-        <p>{body}</p>
+        <p className={["my-0", 'text-secondary'].join(' ')}>{`u/${name} - ${converted_utc}`}</p>
+        <div dangerouslySetInnerHTML={{ __html: selftext }}></div>
       </div>
     </div>
     
@@ -41,6 +42,6 @@ SmallComment.propTypes = {
 
 SmallComment.defaultProps = {
   name: 'wenzel',
-  body: 'wenzelverse',
+  body: 'wenzelvermmmmse',
   created_utc: 235664444
 };

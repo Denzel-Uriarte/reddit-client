@@ -12,6 +12,8 @@ import { Comment } from '../components/comment/Comment';
 import { NavBar } from '../components/navBar/NavBar';
 import { Post } from '../components/post/Post';
 import { PostsPage } from '../pages/postspage/Postspage';
+import { PostPage } from '../pages/postpage/PostPage';
+import { useParams } from 'react-router-dom';
 
 export default function App() {
   return (
@@ -24,29 +26,15 @@ export default function App() {
       </nav>
       <Routes>
         <Route path="/home" element={<PostsPage/>}/>
-        <Route path='/best'>
-          
-        </Route>
-        <Route path='/hot'>
-
-        </Route>
-        <Route path='/new'>
-
-        </Route>
-        <Route path='/top'>
-
-        </Route>
-        <Route path='/rising'>
-
-        </Route>
-        <Route path='/:subreddit'>
-
-        </Route>
-        <Route path='/:subreddit/post/:id'>
-
-        </Route>
+        <Route path="/post/*" element={<PostPageWithPermalink/>} />
       </Routes>
     </Router>
     
   )
+}
+
+function PostPageWithPermalink() {
+  const permalink = useParams();
+
+  return <PostPage permalink = {permalink} />;
 }

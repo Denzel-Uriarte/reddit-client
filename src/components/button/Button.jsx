@@ -1,18 +1,24 @@
 import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { NavLink } from 'react-router-dom';
+import ROUTES from '../../app/routes'
 
 
 export const Button = ({ dark, size, label, extra, ...props }) => {
   const color = dark ? 'btn-dark' : 'btn-light';
   const buttonSize = size==='tall' ? 2 : 12;
   return (
-    <button
+    <NavLink to={ROUTES.homeRoute()} className={`col-${buttonSize}`}>
+      <button
       type="button"
-      className={['btn', `col-${buttonSize}` , color, extra].join(' ')}
+      className={['btn', `col-12` , color, extra].join(' ')}
+
       {...props}
-    >
+      >
+        
       {label}
-    </button>
+      </button>
+    </NavLink>
   );
 };
 
@@ -34,15 +40,10 @@ Button.propTypes = {
    */
   label: PropTypes.string.isRequired,
   /**
-   * Optional click handler
-   */
-  onClick: PropTypes.any,
-  /**
    * Optional additional classes
    */
   extra: PropTypes.string,
 };
 
 Button.defaultProps = {
-  onClick: undefined,
 };

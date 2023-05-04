@@ -1,5 +1,12 @@
 import { Provider } from 'react-redux';
 import { store } from '../src/app/store';
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+  useRouteMatch
+ } from 'react-router-dom';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -18,7 +25,9 @@ const preview = {
 export const decorators = [
   (Story) => (
     <Provider store={store}>
-      <Story />
+      <Router>
+        <Story />        
+      </Router>
     </Provider>
   )
 ]

@@ -1,20 +1,76 @@
 [
   {
-
+    "data":{
+      "children":[
+        {
+          "data": {
+            "subreddit_name_prefixed":"r/gatopanverse",
+            "selftext":"test1 23",
+            "title":"wenzelverse world",
+            "score":12434,
+            "created":1682956738,
+            "author":"wenzek",
+            "num_comments":6870
+          }
+        }
+      ]
+    }
   },
   {
-    "kind":"Listing",
-    "data": {
-      "children": [
-        {        
-          "kind":"t1",
-          "data": {
-            "name":"wenzel",
-            "created_utc":1681228812.0,
-            "score":14,
-            "body":"diegoverse"
+    "data":{
+      "children":[
+        {
+          "data":{
+            "author":"diegoverse",
+            "created_utc":384725325,
+            "score":19622,
+            "body":"hello test test",
+            "replies":{
+              "data":{
+                "children":[
+                  {
+                    "author":"testverse",
+                    "created_utc":12477432,
+                    "score":7340,
+                    "body":"burg"
+                  },
+                  {
+                    "author":"testverse",
+                    "created_utc":12477432,
+                    "score":7340,
+                    "body":"burg"
+                  }
+                ]
+              }
+            }
           }
-        }      
+        },
+        {
+          "data":{
+            "author":"diegoverse",
+            "created_utc":384725325,
+            "score":19622,
+            "body":"hello test test",
+            "replies":{
+              "data":{
+                "children":[
+                  {
+                    "author":"testverse",
+                    "created_utc":12477432,
+                    "score":7340,
+                    "body":"burg"
+                  },
+                  {
+                    "author":"testverse",
+                    "created_utc":12477432,
+                    "score":7340,
+                    "body":"burg"
+                  }
+                ]
+              }
+            }
+          }
+        }
       ]
     }
   }

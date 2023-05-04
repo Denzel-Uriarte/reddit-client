@@ -32,7 +32,6 @@ export const PostsPage = () => {
   return (
     <div>
       <NavBar />
-      <blockquote class="reddit-embed-bq" style={{height:500+'px'}} data-embed-height="500">      <a href="https://www.reddit.com/r/mexico/comments/12zrxn2/hay_tiro_don_lama_hay_tiro/">Hay tiro don Lama, hay Tiro!</a><br/> by      <a href="https://www.reddit.com/user/bansote">u/bansote</a> in      <a href="https://www.reddit.com/r/mexico/">mexico</a>    </blockquote><script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
       <div className='mt-5 row m-0'>
         <div className='col-9'>
           <Categories />
@@ -47,8 +46,10 @@ export const PostsPage = () => {
               created_at_utc={post.data.created_utc}
               numComments={post.data.num_comments}
               isVideo={post.data.isVideo}
-              selftext={post.data.selftext}
+              selftext={post.data.selftext_html}
               commentsinfo={post.data.commentsinfo}
+              permalink={post.data.permalink}
+              url={post.data.url}
               fullpost={false}
             />
           )}

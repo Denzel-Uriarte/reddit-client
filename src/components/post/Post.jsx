@@ -3,13 +3,10 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { CreationInfo } from '../creationInfo/CreationInfo';
 import { VoteBar } from '../voteBar/VoteBar';
 import { Comment } from '../comment/Comment';
-// import { selectComments, setComments } from './postSlice';
-// import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-
-export const Post = ({ author, title, large, subreddit, score, created_at_utc, numComments, isVideo, selftext, commentsinfo, fullpost, ...props }) => {
-  // const dispatch = useDispatch();
-  // const commentsdata = useSelector(selectComments);
+export const Post = ({ author, permalink, title, large, subreddit, media, score, created_at_utc, numComments, isVideo, selftext, commentsinfo, fullpost, url, ...props }) => {
+  const selftext_to_display = new DOMParser().parseFromString(`<!doctype html><body>${selftext}`, 'text/html').body.textContent;
   return (
     <div>
       <div
@@ -30,11 +27,24 @@ export const Post = ({ author, title, large, subreddit, score, created_at_utc, n
               user={author}
               time={created_at_utc}
             />
-            <h2>{title}</h2>
+            {permalink.permalink ? <h2><Link to={`../post/${Object.values(permalink.permalink)[0]}`}>{title}</Link></h2> : <h2><Link to={`../post${permalink}`}>{title}</Link></h2>}
           </div>
-          <p>{`${selftext}`}</p>
+          {selftext_to_display !== "null" ? <div dangerouslySetInnerHTML={{__html: selftext_to_display}}/> : null}
+          {url.includes('i.redd.it') ? 
+          <div className='d-flex justify-content-center text-center'> 
+            <img src={`${url}`} alt="post" width="400" height="300"/>
+          </div> : null
+          }
+          {url.includes('v.redd.it') ? 
+          <div className='d-flex justify-content-center text-center'> 
+            <video controls height="50%" width="50%">
+              <source src={media}/>
+              Sorry, your browser doesn't support embedded videos.
+            </video>
+          </div> : null
+          }
+          {<p><b>media url fetched: {url}</b></p>}
         </div>
-        
       </div>
       <div 
         className={['mt-3'].join(' ')}
@@ -42,11 +52,11 @@ export const Post = ({ author, title, large, subreddit, score, created_at_utc, n
         {fullpost && commentsinfo.map((comment, index)=> 
           <Comment 
             key={index}
-            name={comment.name}
-            body={comment.body}
-            score={comment.score}
-            created_utc={comment.created_at_utc}
-            repliesv2={comment.repliesv2}
+            name={comment.data.author}
+            body={comment.data.body}
+            score={comment.data.score}
+            created_utc={comment.data.created_utc}
+            replies={comment.data.replies}
           />
         )}
       </div>

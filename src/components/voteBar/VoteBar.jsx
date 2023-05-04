@@ -16,7 +16,7 @@ export const VoteBar = ({ score, numComments, ...props}) => {
       >
         {!voted ? 
         <>
-          <img src={require('./upvote-off.png')} alt='upvote' onClick={()=>setTerm('hot.json')}/>
+          <img src={require('./upvote-off.png')} alt='upvote' onClick={()=>setVoted('up')}/>
           <p style={{margin:8+'px'}}>{score}</p>
           <img src={require('./downvote-off.png')} alt='downvote' onClick={()=>setVoted('down')}/>
         </>
