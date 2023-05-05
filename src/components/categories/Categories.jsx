@@ -1,10 +1,8 @@
 import React from 'react';
 import { Button } from '../button/Button';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { useDispatch } from 'react-redux';
 
 export const Categories = () => {
-  const dispatch = useDispatch()
   return (
     <div className='row w-100 justify-content-evenly bg-secondary p-3'>
       <Button 

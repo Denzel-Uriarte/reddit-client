@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 export const SmallVoteBar = ({ score, ...props}) => {

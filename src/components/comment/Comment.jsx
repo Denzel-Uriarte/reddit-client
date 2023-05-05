@@ -6,7 +6,7 @@ import { SmallComment } from '../smallComment/SmallComment';
 
 
 export const Comment = ({ name, score, body, created_utc, replies}) => {
-  const extractUrls = require("extract-urls");
+  const extractUrls = require("extract-urls"); //wip
   const [viewReplies, setViewReplies] = useState('');
   const date = new Date(created_utc*1000)
   const dateFormat = "at "+ date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
@@ -76,7 +76,7 @@ Comment.propTypes = {
   /**
    * Replies to comment
    */
-  repliesv2: PropTypes.array,
+  replies: PropTypes.array,
 };
 
 Comment.defaultProps = {

@@ -1,13 +1,8 @@
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setTerm } from '../../pages/postspage/postsPageSlice';
-import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate()
   const [searchInput, setSearchInput] = useState("");
 

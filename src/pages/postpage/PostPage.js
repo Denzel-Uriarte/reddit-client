@@ -5,7 +5,7 @@ import { Categories } from "../../components/categories/Categories";
 import React, { useEffect, useState } from "react";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { selectPost } from "./postPageSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 export const PostPage = (permalink) => {

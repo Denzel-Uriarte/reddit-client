@@ -8,7 +8,6 @@ import {
  } from 'react-router-dom';
 import './App.css';
 import ROUTES from './routes';
-import { Comment } from '../components/comment/Comment';
 import { NavBar } from '../components/navBar/NavBar';
 import { Post } from '../components/post/Post';
 import { PostsPage } from '../pages/postspage/Postspage';

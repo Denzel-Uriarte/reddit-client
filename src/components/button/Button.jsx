@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { NavLink } from 'react-router-dom';
-import ROUTES from '../../app/routes'
-
 
 
 export const Button = ({ dark, size, label, extra, redirect, ...props }) => {
@@ -13,7 +11,6 @@ export const Button = ({ dark, size, label, extra, redirect, ...props }) => {
       <button
       type="button"
       className={['btn', `col-12` , color, extra].join(' ')}
-
       {...props}
       >
         
@@ -40,6 +37,10 @@ Button.propTypes = {
    * Button contents
    */
   label: PropTypes.string.isRequired,
+  /**
+   * Link to redirect to
+   */
+  redirect: PropTypes.string.isRequired,
   /**
    * Optional additional classes
    */

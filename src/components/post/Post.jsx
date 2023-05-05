@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { VoteBar } from '../voteBar/VoteBar';
 import { Comment } from '../comment/Comment';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Post = ({ author, permalink, title, large, subreddit, media, score, created_at_utc, numComments, isVideo, selftext, commentsinfo, fullpost, url, ...props }) => {
   const selftext_to_display = new DOMParser().parseFromString(`<!doctype html><body>${selftext}`, 'text/html').body.textContent;

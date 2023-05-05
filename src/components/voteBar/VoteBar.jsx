@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from 'react';
-import { setTerm } from '../../pages/postspage/postsPageSlice';
 
 export const VoteBar = ({ score, numComments, ...props}) => {
   const [voted, setVoted] = useState('');
@@ -58,14 +57,9 @@ VoteBar.propTypes = {
    * Number of comments to be displayed
    */
   numComments: PropTypes.number,
-  /**
-   * Wether the user has voted
-   */
-  voted: PropTypes.oneOf(['up', 'down', ''])
 };
 
 VoteBar.defaultProps = {
   score: 248,
-  numComments: 26,
-  voted: '',
+  numComments: 26
 };
