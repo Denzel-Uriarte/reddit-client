@@ -6,7 +6,7 @@ import { SmallComment } from '../smallComment/SmallComment';
 
 
 export const Comment = ({ name, score, body, created_utc, replies}) => {
-  const extractUrls = require("extract-urls"); //wip
+  // const extractUrls = require("extract-urls"); // addwip
   const [viewReplies, setViewReplies] = useState('');
   const date = new Date(created_utc*1000)
   const dateFormat = "at "+ date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()

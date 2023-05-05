@@ -1,6 +1,6 @@
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
-import { Link, useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
   const navigate = useNavigate()

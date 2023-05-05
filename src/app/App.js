@@ -3,13 +3,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  NavLink,
-  useRouteMatch
+  NavLink
  } from 'react-router-dom';
 import './App.css';
 import ROUTES from './routes';
-import { NavBar } from '../components/navBar/NavBar';
-import { Post } from '../components/post/Post';
 import { PostsPage } from '../pages/postspage/Postspage';
 import { PostPage } from '../pages/postpage/PostPage';
 import { useParams } from 'react-router-dom';
