@@ -12,7 +12,6 @@ export const PostPage = (permalink) => {
   const [data, setData] = useState([])
   const post = useSelector(selectPost)
   const link = Object.values(permalink.permalink)[0];
-  console.log(link)
 
   const fetchData = async () => {
     try {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from '../button/Button';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { setTerm } from '../../pages/postspage/postsPageSlice';
 import { useDispatch } from 'react-redux';
 
 export const Categories = () => {
@@ -12,34 +11,34 @@ export const Categories = () => {
         dark={true}
         size='tall'
         label='Best'
-        onClick={()=>dispatch(setTerm('best.json'))}
+        redirect='best'
       />
       <Button 
         dark={true}
         size='tall'
         label='Hot'
-        onClick={()=>dispatch(setTerm('hot.json'))}
+        redirect='hot'
 
       />
       <Button 
         dark={true}
         size='tall'
         label='New'
-        onClick={()=>dispatch(setTerm('new.json'))}
+        redirect='new'
 
       />
       <Button 
         dark={true}
         size='tall'
         label='Top'
-        onClick={()=>dispatch(setTerm('top.json'))}
+        redirect='top'
 
       />
       <Button 
         dark={true}
         size='tall'
         label='Rising'
-        onClick={()=>dispatch(setTerm('rising.json'))}
+        redirect='rising'
 
       />
     </div>

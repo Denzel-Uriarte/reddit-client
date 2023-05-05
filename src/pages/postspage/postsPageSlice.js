@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const postsPageSlice = createSlice({
   name: "term",
   initialState: {
-    term: "best.json"
+    term: "hot.json"
   },
   reducers: {
     setTerm: (state, action) => {

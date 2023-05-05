@@ -4,9 +4,17 @@ import { CreationInfo } from '../creationInfo/CreationInfo';
 import { VoteBar } from '../voteBar/VoteBar';
 import { Comment } from '../comment/Comment';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Post = ({ author, permalink, title, large, subreddit, media, score, created_at_utc, numComments, isVideo, selftext, commentsinfo, fullpost, url, ...props }) => {
   const selftext_to_display = new DOMParser().parseFromString(`<!doctype html><body>${selftext}`, 'text/html').body.textContent;
+  const navigate = useNavigate()
+  const date = new Date(created_at_utc*1000)
+  const dateFormat = "at "+ date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
+  const setSubreddit = () => {
+    navigate(`/r/${subreddit}`)
+  }
+  
   return (
     <div>
       <div
@@ -22,17 +30,19 @@ export const Post = ({ author, permalink, title, large, subreddit, media, score,
           <div
             className={['col-12', 'bg-dark', 'text-light', 'flex-row'].join(' ')}
           >
-            <CreationInfo 
-              subreddit={subreddit}
-              user={author}
-              time={created_at_utc}
-            />
+            <div onClick={setSubreddit}>
+              <p className='fw-light m-0'>{`r/${subreddit} - Posted by u/${author} ${dateFormat}`}</p>
+            </div>
             {permalink.permalink ? <h2><Link to={`../post/${Object.values(permalink.permalink)[0]}`}>{title}</Link></h2> : <h2><Link to={`../post${permalink}`}>{title}</Link></h2>}
           </div>
           {selftext_to_display !== "null" ? <div dangerouslySetInnerHTML={{__html: selftext_to_display}}/> : null}
           {url.includes('i.redd.it') ? 
           <div className='d-flex justify-content-center text-center'> 
-            <img src={`${url}`} alt="post" width="400" height="300"/>
+            {fullpost ? 
+              <img src={`${url}`} alt="post" width="100%" height="100%"/> 
+              : 
+              <img src={`${url}`} alt="post" width="400" height="300"/>
+            }
           </div> : null
           }
           {url.includes('v.redd.it') ? 

@@ -4,16 +4,26 @@ import { Recommended } from "../../components/recommended/Recommended";
 import { Categories } from "../../components/categories/Categories";
 import React, { useEffect, useState } from "react";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { setTerm, selectTerm } from "./postsPageSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 
 
 export const PostsPage = () => {
-  const [data, setData] = useState([])
-  const term = useSelector(selectTerm)
-  console.log(term)
+  const [data, setData] = useState([]);
+  const [term, setTerm] = useState('best.json');
+  const { subreddit, category, searchterm } = useParams();
 
-
+  useEffect(() => {
+    if (subreddit) {
+      setTerm(`r/${subreddit}.json`);
+    } 
+    else if (category) {
+      setTerm(`${category}.json`);
+    } 
+    else if (searchterm) {
+      setTerm(`search.json?q=${searchterm}`);
+    } 
+  }, [category, subreddit, searchterm]);
 
   const fetchData = async () => {
     try {
@@ -23,11 +33,11 @@ export const PostsPage = () => {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchData()
-  }, [term])
+    fetchData();
+  }, [term]);
 
   return (
     <div>
@@ -50,6 +60,7 @@ export const PostsPage = () => {
               commentsinfo={post.data.commentsinfo}
               permalink={post.data.permalink}
               url={post.data.url}
+              media={post.data.secure_media ? post.data.secure_media.reddit_video.fallback_url : null}
               fullpost={false}
             />
           )}

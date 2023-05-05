@@ -25,13 +25,19 @@ export default function App() {
         {/* <NavBar /> */}
       </nav>
       <Routes>
-        <Route path="/home" element={<PostsPage/>}/>
+        <Route path="/" element={<PostsPage/>}/>
+        <Route path="/:category" element={<PostsPage/>}/>
+        <Route path="/r/:subreddit" element={<PostsPage/>}/>
+        <Route path="/search/:searchterm" element={<PostsPage/>}/>
         <Route path="/post/*" element={<PostPageWithPermalink/>} />
+
       </Routes>
     </Router>
     
   )
 }
+
+
 
 function PostPageWithPermalink() {
   const permalink = useParams();
