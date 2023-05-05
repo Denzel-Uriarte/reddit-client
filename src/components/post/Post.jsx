@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { CreationInfo } from '../creationInfo/CreationInfo';
 import { VoteBar } from '../voteBar/VoteBar';
 import { Comment } from '../comment/Comment';
 import { Link } from 'react-router-dom';

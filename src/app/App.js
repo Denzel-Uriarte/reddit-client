@@ -22,7 +22,6 @@ export default function App() {
         <NavLink to={ROUTES.homeRoute()} activeClassName="active">
           WenzelVerse Forums
         </NavLink> 
-        {/* <NavBar /> */}
       </nav>
       <Routes>
         <Route path="/" element={<PostsPage/>}/>

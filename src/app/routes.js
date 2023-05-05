@@ -1,5 +1,5 @@
 const ROUTES = {
-  homeRoute: () => "/home",
+  homeRoute: () => "/",
   postRoute: () => "/post",
 };
 

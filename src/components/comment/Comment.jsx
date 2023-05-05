@@ -2,23 +2,16 @@ import PropTypes from 'prop-types';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { SmallVoteBar } from '../smallVoteBar/SmallVoteBar';
 import React, {useState} from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
 import { SmallComment } from '../smallComment/SmallComment';
-// import { selectReplies, setReplies } from './commentSlice';
 
 
 export const Comment = ({ name, score, body, created_utc, replies}) => {
+  const extractUrls = require("extract-urls");
   const [viewReplies, setViewReplies] = useState('');
-  // const replies = useSelector(selectReplies);
-  // const dispatch = useDispatch();
   const date = new Date(created_utc*1000)
   const dateFormat = "at "+ date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
   const selftext = new DOMParser().parseFromString(`<!doctype html><body>${body}`, 'text/html').body.textContent;
-  
-  // function handleClick() {
-  //   alert('view smaller comments')
-  //   dispatch(setReplies({id: 1, name: 'elvis', body: 'hello i am elvis presley', created_utc: 'made 1 day ago'}))
-  // }
+
   return (
     <div
       className={['col-12', 'flex-column', 'd-flex'].join(' ')}
@@ -34,9 +27,13 @@ export const Comment = ({ name, score, body, created_utc, replies}) => {
         >
           <p className={["my-0", 'text-secondary'].join(' ')}>{`${name} - ${dateFormat}`}</p>
           <div dangerouslySetInnerHTML={{__html: selftext}}/>
-          <button onClick={()=>setViewReplies(!viewReplies)}>
-            View Replies
-          </button>
+          {replies ? 
+            <button onClick={()=>setViewReplies(!viewReplies)}>
+              View Replies
+            </button> 
+          : 
+            <div className={'py-4'}> 
+            </div>}
         </div>
       </div>
       <div
