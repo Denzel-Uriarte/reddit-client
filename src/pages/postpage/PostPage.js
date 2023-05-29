@@ -4,28 +4,26 @@ import { Recommended } from "../../components/recommended/Recommended";
 import { Categories } from "../../components/categories/Categories";
 import React, { useEffect, useState } from "react";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { selectPost } from "./postPageSlice";
-import { useSelector } from "react-redux";
 
 
 export const PostPage = (permalink) => {
   const [data, setData] = useState([])
-  const post = useSelector(selectPost)
   const link = Object.values(permalink.permalink)[0];
 
-  const fetchData = async () => {
-    try {
+
+  useEffect((() => {
+    async function fetchData() {
+      try {
       const response = await fetch(`https://www.reddit.com/${link}.json`);
       const data = await response.json();
       setData(data);
     } catch (error) {
       console.error(error);
     }
-  }
+    }
 
-  useEffect(() => {
     fetchData()
-  }, [post])
+  }), [link])
   
   return (
     <div>
@@ -47,7 +45,7 @@ export const PostPage = (permalink) => {
             selftext={post.data.selftext}
             commentsinfo={data[1].data.children}
             url={post.data.url}
-            media={post.data.secure_media ? post.data.secure_media.reddit_video.fallback_url : null}
+            media={post.data?.fallback_url || null}
             permalink={permalink}
             fullpost={true}
           />
