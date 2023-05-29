@@ -13,7 +13,7 @@ import { useParams } from 'react-router-dom';
 
 export default function App() {
   return (
-        <Router>
+    <Router basename="">
       <nav>
         <NavLink to={ROUTES.homeRoute()} activeClassName="active">
           WenzelVerse Forums
