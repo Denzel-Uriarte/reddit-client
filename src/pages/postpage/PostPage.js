@@ -1,5 +1,4 @@
 import { Post } from "../../components/post/Post";
-import { NavBar } from "../../components/navBar/NavBar";
 import { Recommended } from "../../components/recommended/Recommended";
 import { Categories } from "../../components/categories/Categories";
 import React, { useEffect, useState } from "react";
@@ -29,7 +28,6 @@ export const PostPage = (permalink) => {
   
   return (
     <div>
-      <NavBar />
       <div className='mt-5 row m-0'>
         <div className='col-9'>
           <Categories />
