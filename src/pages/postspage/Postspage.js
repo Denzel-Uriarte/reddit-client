@@ -24,7 +24,8 @@ export const PostsPage = () => {
     } 
   }, [category, subreddit, searchterm]);
 
-  const fetchData = async () => {
+  useEffect(() => {
+    async function fetchData() {
     try {
       const response = await fetch(`https://www.reddit.com/${term}`);
       const data = await response.json();
@@ -33,9 +34,7 @@ export const PostsPage = () => {
       console.error(error);
     }
   };
-
-  useEffect(() => {
-    fetchData();
+  fetchData()
   }, [term]);
 
   return (
