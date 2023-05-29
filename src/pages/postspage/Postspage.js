@@ -4,7 +4,6 @@ import { Recommended } from "../../components/recommended/Recommended";
 import { Categories } from "../../components/categories/Categories";
 import React, { useEffect, useState } from "react";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 
@@ -43,9 +42,9 @@ export const PostsPage = () => {
     <div>
       <NavBar />
       <div className='mt-5 row m-0'>
-        <div className='col-9'>
+        <div className='col-9 '>
           <Categories />
-          {data.data && data.data.children.map((post, index) => 
+          {data.data ? data.data.children.map((post, index) => 
             <Post 
               key={index}
               title={post.data.title}
@@ -60,10 +59,14 @@ export const PostsPage = () => {
               commentsinfo={post.data.commentsinfo}
               permalink={post.data.permalink}
               url={post.data.url}
-              media={post.data.secure_media ? post.data.secure_media.reddit_video.fallback_url : null}
+              media={post.data.secure_media && post.data.secure_media.reddit_video && post.data.secure_media.reddit_video.fallback_url}
               fullpost={false}
             />
-          )}
+          ) 
+          : 
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>}
         </div>
         <div className='mt-5 col-3'>
           <Recommended />

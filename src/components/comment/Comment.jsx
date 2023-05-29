@@ -28,9 +28,12 @@ export const Comment = ({ name, score, body, created_utc, replies}) => {
           <p className={["my-0", 'text-secondary'].join(' ')}>{`${name} - ${dateFormat}`}</p>
           <div dangerouslySetInnerHTML={{__html: selftext}}/>
           {replies ? 
+          <div className={'py-1'}>
             <button onClick={()=>setViewReplies(!viewReplies)}>
               View Replies
             </button> 
+          </div>
+            
           : 
             <div className={'py-4'}> 
             </div>}
