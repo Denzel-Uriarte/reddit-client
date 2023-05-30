@@ -29,7 +29,7 @@ export const PostPage = (permalink) => {
     <div>
       <NavBar />
       <div className='mt-5 row m-0'>
-        <div className='col-md-9 col-12 mt-5 mt-md-0'>
+        <div className='col-md-9 col-12 mt-0 mt-md-0'>
           <Categories />
           {data && data.length > 0 && data[0].data.children.map((post, index) => (
           <Post 

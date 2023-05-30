@@ -16,19 +16,19 @@ export const VoteBar = ({ score, numComments, ...props}) => {
         {!voted ? 
         <>
           <img src={require('./upvote-off.png')} alt='upvote' onClick={()=>setVoted('up')}/>
-          <p style={{margin:8+'px'}}>{score}</p>
+          <p className={'my-2'}>{score}</p>
           <img src={require('./downvote-off.png')} alt='downvote' onClick={()=>setVoted('down')}/>
         </>
         : voted==='up' ? 
         <>
           <img src={require('./upvote-on.png')} alt='upvoted'/>
-          <p style={{margin:8+'px'}}>{score}</p>
+          <p className={'my-2'}>{score}</p>
           <img src={require('./downvote-off.png')} alt='downvote' onClick={()=>setVoted('down')}/>
         </> 
         : 
         <>
           <img src={require('./upvote-off.png')} alt='upvote' onClick={()=>setVoted('up')}/>
-          <p style={{margin:8+'px'}}>{score}</p>
+          <p className={'my-2'}>{score}</p>
           <img src={require('./downvote-on.png')} alt='downvoted'/>
         </> 
         } 

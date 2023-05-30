@@ -41,7 +41,7 @@ export const PostsPage = () => {
     <div>
       <NavBar />
       <div className='mt-5 row m-0'>
-        <div className='col-9 '>
+        <div className='col-12 col-md-9'>
           <Categories />
           {data.data ? data.data.children.map((post, index) => 
             <Post 
