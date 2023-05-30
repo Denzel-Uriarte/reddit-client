@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../button/Button';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 export const Categories = () => {
   return (
