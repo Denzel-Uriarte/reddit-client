@@ -50,7 +50,7 @@ export const Categories = () => {
     //     <li><NavLink class="dropdown-item" to="/hot">Hot</NavLink></li>
     //     <li><NavLink class="dropdown-item" to="/new">New</NavLink></li>
     //     <li><NavLink class="dropdown-item" to="/top">Top</NavLink></li>
-    //     <li><NavLink class="dropdown-item" to="/rising">Rising</NavLink></li>
+    //     <li><NavLink class="dropdown-item" to="/rising">Rising</NavLink></li><tes
     //   </ul>
     // </div>
   )
