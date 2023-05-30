@@ -6,7 +6,7 @@ export const VoteBar = ({ score, numComments, ...props}) => {
   const [voted, setVoted] = useState('');
   return (
     <div 
-      className={['bg-dark', 'h-25', 'col-1', 'text-white', 'flex-column', 'd-flex', 'justify-content-top', 'text-center', 'mx-0', 'me-3', ].join(' ')}
+      className={['bg-dark', 'h-25', 'col-md-1', 'col-2', 'text-white', 'flex-column', 'd-flex', 'justify-content-top', 'text-center', 'mx-0', 'me-3', ].join(' ')}
 
       {...props}
     >

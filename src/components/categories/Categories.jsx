@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from '../button/Button';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { NavLink } from 'react-router-dom';
 
 export const Categories = () => {
   return (
-    <div className='row w-100 justify-content-evenly bg-secondary p-3'>
+    <div className='row w-100 justify-content-evenly bg-secondary p-3 d-none d-md-flex'>
       <Button 
         dark={true}
         size='tall'
@@ -40,6 +41,18 @@ export const Categories = () => {
 
       />
     </div>
+    // <div class="dropdown">
+    //   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    //     Dropdown button
+    //   </button>
+    //   <ul class="dropdown-menu">
+    //     <li><NavLink class="dropdown-item" to="/best">Best</NavLink></li>
+    //     <li><NavLink class="dropdown-item" to="/hot">Hot</NavLink></li>
+    //     <li><NavLink class="dropdown-item" to="/new">New</NavLink></li>
+    //     <li><NavLink class="dropdown-item" to="/top">Top</NavLink></li>
+    //     <li><NavLink class="dropdown-item" to="/rising">Rising</NavLink></li>
+    //   </ul>
+    // </div>
   )
 }
  

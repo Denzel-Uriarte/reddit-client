@@ -23,7 +23,7 @@ export const Post = ({ author, permalink, title, large, subreddit, media, score,
             numComments={numComments}
           />
         <div
-          className={['col-10', 'bg-dark', 'text-light', 'flex-row'].join(' ')}
+          className={['md-col-10', 'col-9', 'bg-dark', 'text-light', 'flex-row'].join(' ')}
         >
           <div
             className={['col-12', 'bg-dark', 'text-light', 'flex-row'].join(' ')}

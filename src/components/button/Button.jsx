@@ -17,6 +17,7 @@ export const Button = ({ dark, size, label, extra, redirect, ...props }) => {
       {label}
       </button>
     </NavLink>
+    
   );
 };
 
