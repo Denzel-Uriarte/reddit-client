@@ -5,7 +5,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 export const Recommended = () => {
   return (
-    <div className='justify-content-evenly bg-dark p-3 d-none d-md-flex'>
+    <div className='justify-content-evenly bg-dark p-3 d-none d-md-block'>
       <h3 className='text-white'>Recommended</h3>
       <Button 
         dark={false}
